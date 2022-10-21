@@ -40,7 +40,8 @@
   "author": "JSainsburyPLC",
   "license": "MIT",
   "dependencies": {
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.7.2",
+    "styled-components": "^5.3.6"
   },
   "files": [
     "src",
