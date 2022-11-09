@@ -1,6 +1,6 @@
-import { CSSProperties, FunctionComponent } from "react";
-import { getDayMonth } from "../../utils/formatDate";
+import { CSSProperties, FunctionComponent, ReactNode } from "react";
 import createClasses from "../../utils/classes";
+import Tooltip from "./Tooltip";
 
 interface BuildDataAttributesSettings {
   [key: string]: string;
@@ -22,10 +22,20 @@ interface Props {
   style?: CSSProperties;
   title: string;
   tooltip?: string;
+  suffixContent?: ReactNode;
 }
 
 const Basic: FunctionComponent<Props> = (props) => {
-  const { classes = [], dataSet, end, start, style, title, tooltip } = props;
+  const {
+    classes = [],
+    dataSet,
+    end,
+    start,
+    style,
+    suffixContent = null,
+    title,
+    tooltip,
+  } = props;
   return (
     <div
       className={createClasses("rt-element", classes)}
@@ -33,28 +43,12 @@ const Basic: FunctionComponent<Props> = (props) => {
       {...buildDataAttributes(dataSet)}
     >
       <div className="rt-element__content" aria-hidden="true">
-        <span className="rt-element__title">{title}</span>
+        <div style={{ overflow: "hidden", whiteSpace: "nowrap" }}>
+          <span className="rt-element__title">{title}</span>
+          {suffixContent}
+        </div>
       </div>
-      <div className="rt-element__tooltip">
-        {tooltip ? (
-          // eslint-disable-next-line react/no-danger
-          <div
-            dangerouslySetInnerHTML={{
-              __html: tooltip.split("\n").join("<br>"),
-            }}
-          />
-        ) : (
-          <div>
-            <div>{title}</div>
-            <div>
-              <strong>Start</strong> {getDayMonth(start)}
-            </div>
-            <div>
-              <strong>End</strong> {getDayMonth(end)}
-            </div>
-          </div>
-        )}
-      </div>
+      <Tooltip end={end} start={start} title={title} tooltip={tooltip} />
     </div>
   );
 };

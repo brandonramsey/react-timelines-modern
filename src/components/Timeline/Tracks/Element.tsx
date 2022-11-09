@@ -26,6 +26,7 @@ const Element: FunctionComponent<Props> = (props) => {
     end,
     classes,
     dataSet = {},
+    suffixContent,
     tooltip,
     clickElement,
   } = props;
@@ -53,6 +54,7 @@ const Element: FunctionComponent<Props> = (props) => {
         style={style}
         classes={classes}
         dataSet={dataSet}
+        suffixContent={suffixContent}
         tooltip={tooltip}
       />
     </div>

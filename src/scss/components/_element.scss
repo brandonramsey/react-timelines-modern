@@ -15,6 +15,8 @@
   white-space: nowrap;
   font-weight: bold;
   text-overflow: ellipsis;
+  display: flex;
+  justify-content: space-between;
 }
 
 .rt-element__tooltip {
