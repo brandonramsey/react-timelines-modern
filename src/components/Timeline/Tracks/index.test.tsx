@@ -1,5 +1,5 @@
-import React from "react";
 import { shallow } from "enzyme";
+import createTime from "../../../utils/time";
 
 import Tracks from ".";
 import Track from "./Track";
@@ -7,10 +7,14 @@ import Track from "./Track";
 describe("<Tracks />", () => {
   it("renders <Track /> components", () => {
     const props = {
-      time: {},
+      time: createTime({
+        start: new Date("2017-01-01"),
+        end: new Date("2018-01-01"),
+        zoom: 1,
+      }),
       tracks: [
-        { id: "1", elements: [] },
-        { id: "2", elements: [] },
+        { id: "1", elements: [], title: "" },
+        { id: "2", elements: [], title: "" },
       ],
     };
     const wrapper = shallow(<Tracks {...props} />);

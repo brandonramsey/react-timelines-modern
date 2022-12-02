@@ -7,7 +7,7 @@ const config: Config = {
   resetMocks: true,
   resetModules: true,
   rootDir: "./src",
-  testEnvironment: 'node',
+  testEnvironment: 'jsdom',
   setupFilesAfterEnv: [ "../jestSetup.ts" ],
 }
 

@@ -38,11 +38,25 @@ describe("<Track />", () => {
           id: "1",
           start: new Date("2017-01-01"),
           end: new Date("2018-01-01"),
+          style: {},
+          time: createTime({
+            start: new Date("2017-01-01"),
+            end: new Date("2018-01-01"),
+            zoom: 1,
+          }),
+          title: "Element 1",
         },
         {
           id: "2",
           start: new Date("2018-01-01"),
           end: new Date("2017-01-01"),
+          style: {},
+          time: createTime({
+            start: new Date("2017-01-01"),
+            end: new Date("2018-01-01"),
+            zoom: 1,
+          }),
+          title: "Element 2",
         },
       ],
     });
@@ -55,7 +69,9 @@ describe("<Track />", () => {
       isOpen: true,
       tracks: [
         {
+          elements: [],
           id: "1",
+          title: "Test Title",
         },
       ],
     });
@@ -68,7 +84,9 @@ describe("<Track />", () => {
       isOpen: true,
       tracks: [
         {
+          elements: [],
           id: "1",
+          title: "Test Title",
         },
       ],
       clickElement: jest.fn(),
@@ -84,7 +102,9 @@ describe("<Track />", () => {
       isOpen: false,
       tracks: [
         {
+          elements: [],
           id: "1",
+          title: "Test Title",
         },
       ],
     });

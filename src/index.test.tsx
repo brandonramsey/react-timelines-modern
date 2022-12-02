@@ -59,8 +59,8 @@ describe("<Timeline />", () => {
 
     it("re-renders when zoom changes", () => {
       const props = { ...createProps(), scale: createScaleProps({ zoom: 1 }) };
-      const wrapper = shallow(<Timeline {...props} />);
-      expect(wrapper.state("time").zoom).toBe(1);
+      const wrapper = shallow<Timeline>(<Timeline {...props} />);
+      expect(wrapper.state().time.zoom).toBe(1);
 
       const nextProps = { ...props, scale: createScaleProps({ zoom: 2 }) };
 

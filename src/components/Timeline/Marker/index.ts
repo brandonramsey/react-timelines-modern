@@ -1,1 +1,1 @@
-export { default } from "./Marker.jsx";
+export { default } from "./Marker";

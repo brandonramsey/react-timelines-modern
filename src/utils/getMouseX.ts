@@ -1,6 +1,12 @@
 import { MouseEvent } from "react";
 
-const getMouseX = (e: MouseEvent) => {
+interface MinimalMouseEvent {
+  clientX: MouseEvent["clientX"];
+  currentTarget: {
+    getBoundingClientRect: MouseEvent["currentTarget"]["getBoundingClientRect"];
+  };
+}
+const getMouseX = (e: MinimalMouseEvent) => {
   const target = e.currentTarget;
   const bounds = target.getBoundingClientRect();
   return e.clientX - bounds.left;

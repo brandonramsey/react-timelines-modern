@@ -1,4 +1,4 @@
-const classes = (base: string, additional: string | string[]) => {
+const classes = (base: string, additional?: string | string[]) => {
   if (!additional) {
     return base;
   }

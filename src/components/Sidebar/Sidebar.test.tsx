@@ -12,6 +12,7 @@ describe("<Sidebar />", () => {
         {
           id: "1",
           title: "Track 1",
+          elements: [],
         },
       ],
       toggleTrackOpen: jest.fn(),

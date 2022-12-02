@@ -4,9 +4,16 @@ import { shallow } from "enzyme";
 import Body from "./Body";
 import Tracks from "./Tracks";
 import Grid from "./Grid";
+import createTime from "../../utils/time";
 
-const defaultProps = {
-  time: {},
+type BodyProps = React.ComponentProps<typeof Body>;
+
+const defaultProps: BodyProps = {
+  time: createTime({
+    start: new Date(),
+    end: new Date(),
+    zoom: 1,
+  }),
   grid: [],
   tracks: [],
 };

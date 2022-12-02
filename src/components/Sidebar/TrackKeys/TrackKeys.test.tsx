@@ -1,18 +1,21 @@
-import React from "react";
 import { shallow } from "enzyme";
 
 import TrackKeys from ".";
 import TrackKey from "./TrackKey";
 
+type TrackKeysProps = React.ComponentProps<typeof TrackKeys>;
+
 describe("<TrackKeys />", () => {
   it("renders a <TrackKey /> for each track", () => {
-    const props = {
+    const props: TrackKeysProps = {
       tracks: [
         {
+          elements: [],
           id: "1",
           title: "Track 1",
         },
         {
+          elements: [],
           id: "2",
           title: "Track 2",
         },

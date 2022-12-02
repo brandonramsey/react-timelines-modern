@@ -1,5 +1,6 @@
-import React from "react";
 import { shallow } from "enzyme";
+
+import createTime from "../../../utils/time";
 
 import Row from "./Row";
 import Cell from "./Cell";
@@ -7,7 +8,12 @@ import Cell from "./Cell";
 describe("<Row />", () => {
   it("renders the <Cell /> components", () => {
     const props = {
-      time: {},
+      time: createTime({
+        start: new Date("2017-01-01"),
+        end: new Date("2018-01-01"),
+        zoom: 1,
+      }),
+      style: {},
       cells: [
         {
           title: "test",
