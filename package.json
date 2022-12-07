@@ -1,8 +1,8 @@
 {
-  "name": "react-timelines-modern",
+  "name": "@brandonramsey/react-timelines-modern",
   "version": "1.0.0-1",
   "description": "React Timelines: Modern Implementation",
-  "main": "lib/index.js",
+  "main": "lib/src/index.js",
   "scripts": {
     "build:css": "node-sass src/scss/style.scss lib/css/style.css",
     "build:js": "tsc --project tsconfig.build.json",
@@ -37,7 +37,10 @@
     "tracks",
     "time"
   ],
-  "repository": "git@github.com:JSainsburyPLC/react-timelines.git",
+  "repository": "https://github.com/brandonramsey/react-timelines-modern",
+  "publishConfig": {
+    "@brandonramsey:registry": "https://npm.pkg.github.com"
+  },
   "author": "JSainsburyPLC",
   "license": "MIT",
   "dependencies": {
