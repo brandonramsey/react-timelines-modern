@@ -1,4 +1,4 @@
-import type { CSSProperties, ReactElement } from "react";
+import type { CSSProperties, ReactElement, ReactNode } from "react";
 import { ClickElementHandler } from "./components/Timeline/Tracks/Element";
 
 export interface Cell {
@@ -66,6 +66,6 @@ export interface Track {
   id: string;
   isOpen?: boolean;
   sideComponent?: ReactElement;
-  title: string;
+  title: string | ReactNode;
   tracks?: Track[];
 }

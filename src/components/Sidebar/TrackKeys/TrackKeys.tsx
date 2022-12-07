@@ -8,16 +8,11 @@ interface Props {
 }
 
 export default function TrackKeys(props: Props): JSX.Element {
-  const { tracks, toggleOpen, clickTrackButton } = props;
+  const { tracks, toggleOpen } = props;
   return (
     <ul className="rt-track-keys">
       {tracks.map((track) => (
-        <TrackKey
-          key={track.id}
-          track={track}
-          toggleOpen={toggleOpen}
-          clickTrackButton={clickTrackButton}
-        />
+        <TrackKey key={track.id} track={track} toggleOpen={toggleOpen} />
       ))}
     </ul>
   );
