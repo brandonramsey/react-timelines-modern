@@ -62,7 +62,6 @@ export interface TimeSettings {
 
 export interface Track {
   elements: Element[];
-  hasButton?: boolean;
   id: string;
   isOpen?: boolean;
   sideComponent?: ReactElement;

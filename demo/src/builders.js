@@ -142,7 +142,6 @@ export const buildTrack = (trackId) => {
     title: `Track ${trackId}`,
     elements: buildElements(trackId),
     tracks,
-    // hasButton: true,
     // link: 'www.google.com',
     isOpen: false,
   };
