@@ -1,6 +1,6 @@
 {
   "name": "@brandonramsey/react-timelines-modern",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "React Timelines: Modern Implementation",
   "main": "lib/src/index.js",
   "scripts": {
@@ -47,7 +47,9 @@
     "prop-types": "^15.7.2",
     "react": "^16.14.0"
   },
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "devDependencies": {
     "@types/enzyme": "^3.10.12",
     "@types/enzyme-adapter-react-16": "^1.0.6",
