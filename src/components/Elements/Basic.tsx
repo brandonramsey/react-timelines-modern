@@ -1,4 +1,4 @@
-import { CSSProperties, FunctionComponent } from "react";
+import { CSSProperties, FunctionComponent, ReactNode } from "react";
 import { getDayMonth } from "../../utils/formatDate";
 import createClasses from "../../utils/classes";
 
@@ -22,10 +22,20 @@ interface Props {
   style?: CSSProperties;
   title: string;
   tooltip?: string;
+  continuing: ReactNode;
 }
 
 const Basic: FunctionComponent<Props> = (props) => {
-  const { classes = [], dataSet, end, start, style, title, tooltip } = props;
+  const {
+    classes = [],
+    dataSet,
+    end,
+    start,
+    style,
+    title,
+    tooltip,
+    continuing,
+  } = props;
   return (
     <div
       className={createClasses("rt-element", classes)}
@@ -34,6 +44,11 @@ const Basic: FunctionComponent<Props> = (props) => {
     >
       <div className="rt-element__content" aria-hidden="true">
         <span className="rt-element__title">{title}</span>
+        {continuing ? (
+          <span className="rt-element__continuing-arrow">{continuing}</span>
+        ) : (
+          <></>
+        )}
       </div>
       <div className="rt-element__tooltip">
         {tooltip ? (

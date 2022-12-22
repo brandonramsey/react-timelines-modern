@@ -1,4 +1,4 @@
-import { CSSProperties, FunctionComponent } from "react";
+import { CSSProperties, FunctionComponent, ReactNode } from "react";
 import { TimeSettings } from "../../../types";
 
 import BasicElement from "../../Elements/Basic";
@@ -13,6 +13,7 @@ interface Props {
   dataSet?: Record<string, string>;
   tooltip?: string;
   clickElement?: (props: Props) => void;
+  continuing: ReactNode;
 }
 
 export type ClickElementHandler = (props: Props) => void;
@@ -28,6 +29,7 @@ const Element: FunctionComponent<Props> = (props) => {
     dataSet = {},
     tooltip,
     clickElement,
+    continuing,
   } = props;
 
   const handleClick = () => {
@@ -54,6 +56,7 @@ const Element: FunctionComponent<Props> = (props) => {
         classes={classes}
         dataSet={dataSet}
         tooltip={tooltip}
+        continuing={continuing}
       />
     </div>
   );

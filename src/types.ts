@@ -1,4 +1,4 @@
-import type { CSSProperties, ReactElement } from "react";
+import type { CSSProperties, ReactElement, ReactNode } from "react";
 import { ClickElementHandler } from "./components/Timeline/Tracks/Element";
 
 export interface Cell {
@@ -20,6 +20,7 @@ export interface Element {
   time: TimeSettings;
   title: string;
   tooltip?: string;
+  continuing: ReactNode;
 }
 
 export interface ScaleSettings {
