@@ -22,7 +22,7 @@ interface Props {
   style?: CSSProperties;
   title: string;
   tooltip?: ReactNode;
-  continuing: ReactNode;
+  continuing?: ReactNode;
 }
 
 const Basic: FunctionComponent<Props> = (props) => {

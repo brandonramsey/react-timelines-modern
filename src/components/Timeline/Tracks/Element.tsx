@@ -13,7 +13,7 @@ interface Props {
   dataSet?: Record<string, string>;
   tooltip?: ReactNode;
   clickElement?: (props: Props) => void;
-  continuing: ReactNode;
+  continuing?: ReactNode;
 }
 
 export type ClickElementHandler = (props: Props) => void;
