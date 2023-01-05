@@ -21,7 +21,7 @@ interface Props {
   start: Date;
   style?: CSSProperties;
   title: string;
-  tooltip?: string;
+  tooltip?: ReactNode;
   continuing: ReactNode;
 }
 
