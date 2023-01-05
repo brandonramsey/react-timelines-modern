@@ -51,14 +51,7 @@ const Basic: FunctionComponent<Props> = (props) => {
         )}
       </div>
       <div className="rt-element__tooltip">
-        {tooltip ? (
-          // eslint-disable-next-line react/no-danger
-          <div
-            dangerouslySetInnerHTML={{
-              __html: tooltip.split("\n").join("<br>"),
-            }}
-          />
-        ) : (
+        {tooltip || (
           <div>
             <div>{title}</div>
             <div>

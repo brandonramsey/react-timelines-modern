@@ -11,7 +11,7 @@ interface Props {
   end: Date;
   classes?: string[];
   dataSet?: Record<string, string>;
-  tooltip?: string;
+  tooltip?: ReactNode;
   clickElement?: (props: Props) => void;
   continuing: ReactNode;
 }

@@ -19,7 +19,7 @@ export interface Element {
   style: CSSProperties;
   time: TimeSettings;
   title: string;
-  tooltip?: string;
+  tooltip?: ReactNode;
   continuing: ReactNode;
 }
 
@@ -63,10 +63,9 @@ export interface TimeSettings {
 
 export interface Track {
   elements: Element[];
-  hasButton?: boolean;
   id: string;
   isOpen?: boolean;
   sideComponent?: ReactElement;
-  title: string;
+  title: string | ReactNode;
   tracks?: Track[];
 }

@@ -1,8 +1,8 @@
 {
-  "name": "react-timelines-modern",
-  "version": "1.0.0-1",
+  "name": "@brandonramsey/react-timelines-modern",
+  "version": "1.1.0",
   "description": "React Timelines: Modern Implementation",
-  "main": "lib/index.js",
+  "main": "lib/src/index.js",
   "scripts": {
     "build:css": "node-sass src/scss/style.scss lib/css/style.css",
     "build:js": "tsc --project tsconfig.build.json",
@@ -15,7 +15,7 @@
     "lint:prettier:fix": "prettier --write \"{e2e,src}/**/*.{js,jsx,ts,tsx}\"",
     "lint:prettier": "prettier --list-different \"{e2e,src}/**/*.{js,jsx,ts,tsx}\"",
     "lint": "npm run lint:prettier && npm run lint:js",
-    "prepublish": "npm run clean && npm run build",
+    "prepare": "npm run clean && npm run build",
     "test": "npm run test:build && npm run lint && npm run test:unit",
     "test:unit": "jest",
     "test:build": "tsc --project tsconfig.json --noEmit",
@@ -37,7 +37,10 @@
     "tracks",
     "time"
   ],
-  "repository": "git@github.com:JSainsburyPLC/react-timelines.git",
+  "repository": "https://github.com/brandonramsey/react-timelines-modern",
+  "publishConfig": {
+    "@brandonramsey:registry": "https://npm.pkg.github.com"
+  },
   "author": "JSainsburyPLC",
   "license": "MIT",
   "dependencies": {
@@ -45,7 +48,6 @@
     "react": "^16.14.0"
   },
   "files": [
-    "src",
     "lib"
   ],
   "devDependencies": {
