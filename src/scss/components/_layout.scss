@@ -4,7 +4,8 @@
   @media (min-width: $react-timelines-auto-open-breakpoint) {
     margin-left: 0;
   }
-
+  display: flex;
+  width:100%;
   &.rt-is-open {
     margin-left: 0;
   }
@@ -13,15 +14,13 @@
 .rt-layout__side {
   position: relative;
   z-index: 2;
-  display: inline-block;
-  width: $react-timelines-sidebar-width;
+
   vertical-align: top;
 }
 
 .rt-layout__main {
-  display: inline-block;
-  width: calc(100% - #{$react-timelines-sidebar-width});
   vertical-align: top;
+  flex-grow: 1;
 }
 
 .rt-layout__timeline {
