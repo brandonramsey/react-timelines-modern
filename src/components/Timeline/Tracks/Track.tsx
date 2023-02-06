@@ -35,6 +35,7 @@ const Track: FunctionComponent<Props> = (props) => {
               time: elementTime,
               title,
               tooltip,
+              continuing,
             } = element;
             const selectedTime = elementTime || time;
             const selectedClickElement = elementClickElement || clickElement;
@@ -52,6 +53,7 @@ const Track: FunctionComponent<Props> = (props) => {
                 tooltip={tooltip}
                 id={id}
                 altId={altId}
+                continuing={continuing}
               />
             );
           })}

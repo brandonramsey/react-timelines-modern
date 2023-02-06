@@ -1,6 +1,6 @@
 {
   "name": "@brandonramsey/react-timelines-modern",
-  "version": "1.1.0",
+  "version": "1.3.0",
   "description": "React Timelines: Modern Implementation",
   "main": "lib/src/index.js",
   "scripts": {

@@ -21,6 +21,7 @@ export interface Element {
   time: TimeSettings;
   title: string;
   tooltip?: ReactNode;
+  continuing?: ReactNode;
 }
 
 export interface ScaleSettings {
