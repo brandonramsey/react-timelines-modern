@@ -22,13 +22,14 @@ const Track: FunctionComponent<Props> = (props) => {
       <div className="rt-track__elements">
         {elements
           .filter(({ start, end }) => end > start)
-          .map((element) => {
+          .map((element: ElementInterface) => {
             const {
               classes,
               clickElement: elementClickElement,
               dataSet,
               end,
               id,
+              altId,
               start,
               style,
               time: elementTime,
@@ -49,6 +50,8 @@ const Track: FunctionComponent<Props> = (props) => {
                 time={selectedTime}
                 title={title}
                 tooltip={tooltip}
+                id={id}
+                altId={altId}
               />
             );
           })}

@@ -15,6 +15,7 @@ export interface Element {
   dataSet?: Record<string, string>;
   end: Date;
   id: string;
+  altId: string;
   start: Date;
   style: CSSProperties;
   time: TimeSettings;
