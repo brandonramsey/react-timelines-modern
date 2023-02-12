@@ -8,6 +8,7 @@ interface Props {
   time?: TimeSettings;
   style?: CSSProperties;
   title?: string;
+  titleStyle?: CSSProperties;
   start: Date;
   end: Date;
   classes?: string[];
@@ -26,6 +27,7 @@ const Element: FunctionComponent<Props> = (props) => {
     time,
     style,
     title = "",
+    titleStyle = {},
     start,
     end,
     classes,
@@ -55,6 +57,7 @@ const Element: FunctionComponent<Props> = (props) => {
       <BasicElement
         id={id}
         title={title}
+        titleStyle={titleStyle}
         start={start}
         end={end}
         style={style}

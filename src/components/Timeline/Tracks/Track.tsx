@@ -34,6 +34,7 @@ const Track: FunctionComponent<Props> = (props) => {
               style,
               time: elementTime,
               title,
+              titleStyle,
               tooltip,
               continuing,
             } = element;
@@ -50,6 +51,7 @@ const Track: FunctionComponent<Props> = (props) => {
                 style={style}
                 time={selectedTime}
                 title={title}
+                titleStyle={titleStyle}
                 tooltip={tooltip}
                 id={id}
                 altId={altId}

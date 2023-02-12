@@ -18,6 +18,7 @@ export interface Element {
   altId: string;
   start: Date;
   style: CSSProperties;
+  titleStyle?: CSSProperties;
   time: TimeSettings;
   title: string;
   tooltip?: ReactNode;

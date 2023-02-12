@@ -15,6 +15,14 @@ const defaultProps: BasicProps = {
 };
 
 describe("<Basic />", () => {
+
+  describe("Title", () => {
+    it('should apply style to title', () => {
+      const props = { ...defaultProps, titleStyle: { fontWeight: "bold" } };
+      const wrapper = shallow(<Basic {...props} />);
+      expect(wrapper.find(".rt-element__title").prop("style")).toHaveProperty('fontWeight', "bold");
+    });
+  });
   describe("Tooltip", () => {
     const getTooltip = (node: ShallowWrapper) =>
       node.find(".rt-element__tooltip");

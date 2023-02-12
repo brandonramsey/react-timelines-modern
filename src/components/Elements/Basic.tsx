@@ -22,6 +22,7 @@ interface Props {
   start: Date;
   style?: CSSProperties;
   title: string;
+  titleStyle?: CSSProperties;
   tooltip?: ReactNode;
   altId?: string;
   continuing?: ReactNode;
@@ -36,6 +37,7 @@ const Basic: FunctionComponent<Props> = (props) => {
     start,
     style,
     title,
+    titleStyle,
     tooltip,
     altId,
     continuing,
@@ -49,7 +51,7 @@ const Basic: FunctionComponent<Props> = (props) => {
       {...buildDataAttributes(dataSet)}
     >
       <div className="rt-element__content" aria-hidden="true">
-        <span className="rt-element__title">{title}</span>
+        <span className="rt-element__title" style={titleStyle}>{title}</span>
         {continuing || <></>}
       </div>
       <div className="rt-element__tooltip">
