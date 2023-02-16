@@ -43,7 +43,7 @@ const Basic: FunctionComponent<Props> = (props) => {
   return (
     <div
       id={id}
-      data-altId={altId}
+      data-altid={altId}
       className={createClasses("rt-element", classes)}
       style={style}
       {...buildDataAttributes(dataSet)}
