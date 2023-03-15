@@ -2,7 +2,7 @@ import { CSSProperties, FunctionComponent, ReactNode } from "react";
 import { TimeSettings } from "../../../types";
 
 import BasicElement from "../../Elements/Basic";
-
+import { getMaxDate, getMinDate } from "../../../utils/date";
 interface Props {
   id?: string;
   time?: TimeSettings;
@@ -43,7 +43,14 @@ const Element: FunctionComponent<Props> = (props) => {
       clickElement(props);
     }
   };
-  const styleLeftAndWidth = time ? time.toStyleLeftAndWidth(start, end) : {};
+
+  const styleLeftAndWidth = time
+  ? time.toStyleLeftAndWidth(
+      getMaxDate(start, time.start),
+      getMinDate(end, time.end)
+    )
+  : {};
+
   const elementStyle = {
     ...styleLeftAndWidth,
     ...(clickElement ? { cursor: "pointer" } : {}),

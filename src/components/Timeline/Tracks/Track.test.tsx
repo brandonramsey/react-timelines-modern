@@ -36,6 +36,7 @@ describe("<Track />", () => {
       elements: [
         {
           id: "1",
+          altId: "1",
           start: new Date("2017-01-01"),
           end: new Date("2018-01-01"),
           style: {},
@@ -48,6 +49,7 @@ describe("<Track />", () => {
         },
         {
           id: "2",
+          altId: "2",
           start: new Date("2018-01-01"),
           end: new Date("2017-01-01"),
           style: {},

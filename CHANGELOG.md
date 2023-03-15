@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.5.0] - 2023-03-14
+
+### Changed
+
+* Element width is now bound by timeline width
+
 ## [1.4.1] - 2023-03-06
 
 ### Fixed
