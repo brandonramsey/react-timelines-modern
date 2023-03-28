@@ -22,6 +22,7 @@ export interface Element {
   time: TimeSettings;
   title: string;
   tooltip?: ReactNode;
+  tooltipStyle?: CSSProperties;
   continuing?: ReactNode;
 }
 
