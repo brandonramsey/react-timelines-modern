@@ -24,6 +24,7 @@ interface Props {
   title: string;
   titleStyle?: CSSProperties;
   tooltip?: ReactNode;
+  tooltipStyle?: CSSProperties;
   altId?: string;
   continuing?: ReactNode;
 }
@@ -39,6 +40,7 @@ const Basic: FunctionComponent<Props> = (props) => {
     title,
     titleStyle,
     tooltip,
+    tooltipStyle = {},
     altId,
     continuing,
   } = props;
@@ -54,7 +56,7 @@ const Basic: FunctionComponent<Props> = (props) => {
         <span className="rt-element__title" style={titleStyle}>{title}</span>
         {continuing || <></>}
       </div>
-      <div className="rt-element__tooltip">
+      <div className="rt-element__tooltip" style={tooltipStyle}>
         {tooltip || (
           <div>
             <div>{title}</div>
