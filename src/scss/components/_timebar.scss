@@ -12,6 +12,10 @@
 .rt-timebar__cell {
   position: absolute;
   text-align: center;
+  height: 100%;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
 
   background-color: $react-timelines-timebar-cell-background-color;
   border-left: 1px solid $react-timelines-keyline-color;
