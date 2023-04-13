@@ -48,6 +48,15 @@ const Basic: FunctionComponent<Props> = (props) => {
     altId,
     continuing,
   } = props;
+
+  const defaultTooltipStyle: CSSProperties = {
+    color: "white",
+    lineHeight: "1.3",
+    textAlign: "left",
+    padding: "10px",
+    background: "#4c4c4c",
+  };
+
   return (
     <div
       id={id}
@@ -61,12 +70,15 @@ const Basic: FunctionComponent<Props> = (props) => {
         <span className="rt-element__title" style={titleStyle}>{title}</span>
         {continuing || <></>}
       </div>
-      {tooltip || (
+      {tooltip ? (
+        <div className="rt-element__tooltip" style={tooltipStyle}>
+          {tooltip}
+        </div>
+      ) : (
         <Tooltip
-          className={tooltipStyle ? "" : "rt-element__tooltip"}
           id="rt-tooltip"
           float={tooltipFollowCursor}
-          style={tooltipStyle}
+          style={{ ...defaultTooltipStyle, ...tooltipStyle }}
           noArrow={true}
           place="top"
           offset={25}

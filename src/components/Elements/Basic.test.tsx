@@ -37,14 +37,14 @@ describe("<Basic />", () => {
     it('should apply style to tooltip', () => {
       const props = { ...defaultProps, tooltipStyle: { backgroundColor: 'orange' } };
       const wrapper = shallow(<Basic {...props} />);
-      expect(wrapper.find('.rt-element__tooltip').prop('style')).toHaveProperty('backgroundColor', 'orange');
+      expect(wrapper.find("#rt-tooltip").prop("style")).toHaveProperty("backgroundColor", "orange");
     });
 
     it("handles multiline tooltips", () => {
       const tooltip = "Test\ntooltip";
       const props = { ...defaultProps, tooltip };
       const wrapper = shallow(<Basic {...props} />);
-      expect(getTooltip(wrapper).html()).toMatch("Test<br>tooltip");
+      expect(getTooltip(wrapper).html()).toMatch("Test\ntooltip");
     });
 
     /* @todo: fix and enable this test */
