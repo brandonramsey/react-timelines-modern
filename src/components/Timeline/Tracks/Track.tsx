@@ -36,6 +36,7 @@ const Track: FunctionComponent<Props> = (props) => {
               title,
               titleStyle,
               tooltip,
+              tooltipFollowCursor,
               tooltipStyle,
               continuing,
             } = element;
@@ -55,6 +56,7 @@ const Track: FunctionComponent<Props> = (props) => {
                 titleStyle={titleStyle}
                 tooltip={tooltip}
                 tooltipStyle={tooltipStyle}
+                tooltipFollowCursor={tooltipFollowCursor}
                 id={id}
                 altId={altId}
                 continuing={continuing}

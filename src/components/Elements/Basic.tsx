@@ -1,6 +1,8 @@
 import { CSSProperties, FunctionComponent, ReactNode } from "react";
 import { getDayMonth } from "../../utils/formatDate";
 import createClasses from "../../utils/classes";
+import { Tooltip } from "react-tooltip";
+import "react-tooltip/dist/react-tooltip.css";
 
 interface BuildDataAttributesSettings {
   [key: string]: string;
@@ -25,6 +27,7 @@ interface Props {
   titleStyle?: CSSProperties;
   tooltip?: ReactNode;
   tooltipStyle?: CSSProperties;
+  tooltipFollowCursor?: boolean;
   altId?: string;
   continuing?: ReactNode;
 }
@@ -41,34 +44,56 @@ const Basic: FunctionComponent<Props> = (props) => {
     titleStyle,
     tooltip,
     tooltipStyle = {},
+    tooltipFollowCursor,
     altId,
     continuing,
   } = props;
+
+  const defaultTooltipStyle: CSSProperties = {
+    color: "white",
+    lineHeight: "1.3",
+    textAlign: "left",
+    padding: "10px",
+    background: "#4c4c4c",
+  };
+
   return (
     <div
       id={id}
       data-altid={altId}
       className={createClasses("rt-element", classes)}
       style={style}
+      data-tooltip-id="rt-tooltip"
       {...buildDataAttributes(dataSet)}
     >
       <div className="rt-element__content" aria-hidden="true">
         <span className="rt-element__title" style={titleStyle}>{title}</span>
         {continuing || <></>}
       </div>
-      <div className="rt-element__tooltip" style={tooltipStyle}>
-        {tooltip || (
+      {tooltip ? (
+        <div className="rt-element__tooltip" style={tooltipStyle}>
+          {tooltip}
+        </div>
+      ) : (
+        <Tooltip
+          id="rt-tooltip"
+          float={tooltipFollowCursor}
+          style={{ ...defaultTooltipStyle, ...tooltipStyle }}
+          noArrow={true}
+          place="top"
+          offset={25}
+          delayShow={300}
+          delayHide={300}
+        >
+          <div>{title}</div>
           <div>
-            <div>{title}</div>
-            <div>
-              <strong>Start</strong> {getDayMonth(start)}
-            </div>
-            <div>
-              <strong>End</strong> {getDayMonth(end)}
-            </div>
+            <strong>Start</strong> {getDayMonth(start)}
           </div>
-        )}
-      </div>
+          <div>
+            <strong>End</strong> {getDayMonth(end)}
+          </div>
+        </Tooltip>
+      )}
     </div>
   );
 };

@@ -15,6 +15,7 @@ interface Props {
   dataSet?: Record<string, string>;
   tooltip?: ReactNode;
   tooltipStyle?: CSSProperties;
+  tooltipFollowCursor?: boolean;
   altId?: string;
   clickElement?: (props: Props) => void;
   continuing?: ReactNode;
@@ -34,6 +35,7 @@ const Element: FunctionComponent<Props> = (props) => {
     classes,
     dataSet = {},
     tooltip,
+    tooltipFollowCursor,
     tooltipStyle = {},
     altId,
     clickElement,
@@ -73,6 +75,7 @@ const Element: FunctionComponent<Props> = (props) => {
         classes={classes}
         dataSet={dataSet}
         tooltip={tooltip}
+        tooltipFollowCursor={tooltipFollowCursor}
         tooltipStyle={tooltipStyle}
         altId={altId}
         continuing={continuing}
