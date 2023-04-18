@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.6.0] - 2023-04-18
+
+### Changed
+
+* Update styling to increase the height of the Timebar cells
+* Modify default tooltip and enable cursor following
+* Update element width using date calculation
+* Add ability to add custom tooltip styling
+
 ## [1.5.0] - 2023-03-14
 
 ### Changed
