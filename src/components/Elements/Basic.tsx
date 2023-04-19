@@ -57,13 +57,15 @@ const Basic: FunctionComponent<Props> = (props) => {
     background: "#4c4c4c",
   };
 
+  const tooltipId = `rt-tooltip-${altId ?? Math.floor(Math.random())}`;
+
   return (
     <div
       id={id}
       data-altid={altId}
       className={createClasses("rt-element", classes)}
       style={style}
-      data-tooltip-id="rt-tooltip"
+      data-tooltip-id={tooltipId}
       {...buildDataAttributes(dataSet)}
     >
       <div className="rt-element__content" aria-hidden="true">
@@ -76,7 +78,7 @@ const Basic: FunctionComponent<Props> = (props) => {
         </div>
       ) : (
         <Tooltip
-          id="rt-tooltip"
+          id={tooltipId}
           float={tooltipFollowCursor}
           style={{ ...defaultTooltipStyle, ...tooltipStyle }}
           noArrow={true}
