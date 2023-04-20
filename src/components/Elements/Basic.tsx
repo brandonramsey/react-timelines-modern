@@ -2,6 +2,7 @@ import { CSSProperties, FunctionComponent, ReactNode } from "react";
 import { getDayMonth } from "../../utils/formatDate";
 import createClasses from "../../utils/classes";
 import { Tooltip } from "react-tooltip";
+import { v4 as uuidv4 } from 'uuid';
 import "react-tooltip/dist/react-tooltip.css";
 
 interface BuildDataAttributesSettings {
@@ -57,7 +58,7 @@ const Basic: FunctionComponent<Props> = (props) => {
     background: "#4c4c4c",
   };
 
-  const tooltipId = `rt-tooltip-${altId ?? Math.floor(Math.random())}`;
+  const tooltipId = `rt-tooltip-${altId ?? uuidv4()}`;
 
   return (
     <div
