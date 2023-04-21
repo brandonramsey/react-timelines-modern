@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.6.1] - 2023-04-18
+
+### Fixed
+
+* Give a unique identifier to the default tooltip to resolve broken test
+
 ## [1.6.0] - 2023-04-18
 
 ### Changed
